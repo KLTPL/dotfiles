@@ -6,3 +6,11 @@ debug
 foo.*
 *.log
 data
+
+# 1. Temporary Swap Files (Created by Vim when you edit a file)
+*.swp
+*.swo
+
+# 2. OS Garbage (Mac/Windows specific metadata)
+.DS_Store
+Thumbs.db
