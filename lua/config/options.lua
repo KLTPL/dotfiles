@@ -5,3 +5,5 @@
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.winbar = "%=%m %f"
+
+vim.opt.wrap = true
