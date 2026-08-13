@@ -27,6 +27,10 @@ chsh -s $(which zsh)
 
 4. Download all plugins using the zsh-install.sh script
 
+```bash
+~/dotfiles/zsh-install.sh
+```
+
 5. Create symlink for zsh
 
 ```bash
@@ -36,7 +40,7 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 6. Create symlink for powerlevel10k if installed via zsh-install.sh
 
 ```bash
-ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ```
 
 ### LazyVim
