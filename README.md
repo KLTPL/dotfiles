@@ -25,9 +25,15 @@ chsh -s $(which zsh)
 
 3. Download [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/)
 
-4. Download [Zsh autosuggestions plugin](https://github.com/zsh-users/zsh-autosuggestions/)
+4. Download all plugins using the zsh-install.sh script
 
-5. Create symlink
+5. Create symlink for zsh
+
+```bash
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+```
+
+6. Create symlink for powerlevel10k if installed via zsh-install.sh
 
 ```bash
 ln -s ~/dotfiles/.zshrc ~/.zshrc
@@ -36,6 +42,7 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ### LazyVim
 
 ```bash
+mkdir -p ~/.config
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ```
 
