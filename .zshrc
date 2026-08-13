@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,9 +120,6 @@ alias filip='cd ~/Desktop/folder/dlubanie-w-kodzie/zajecia-filip/chat'
 alias tymek='cd ~/Desktop/folder/dlubanie-w-kodzie/zajecia-tymek/pacman'
 alias solvro='cd ~/Desktop/folder/dlubanie-w-kodzie/solvro/wak-wyzw-2026/'
 alias dotfiles='cd ~/dotfiles/'
-
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
