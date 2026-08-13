@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[user]
+	email = 105875079+KLTPL@users.noreply.github.com
+	name = KLTPL
+[credential]
+	helper = store
+[core]
+	autocrlf = false
