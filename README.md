@@ -17,11 +17,17 @@ sudo apt update
 sudo apt install zsh
 ```
 
-2. Download [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/)
+2. Set Zsh as the default shell
 
-3. Download [Zsh autosuggestions plugin](https://github.com/zsh-users/zsh-autosuggestions/)
+```bash
+chsh -s $(which zsh)
+```
 
-4. Create symlink
+3. Download [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/)
+
+4. Download [Zsh autosuggestions plugin](https://github.com/zsh-users/zsh-autosuggestions/)
+
+5. Create symlink
 
 ```bash
 ln -s ~/dotfiles/.zshrc ~/.zshrc
