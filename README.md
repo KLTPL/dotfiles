@@ -59,9 +59,19 @@ ln -sf /home/kltpl/dotfiles/.p10k.zsh /root/.p10k.zsh
 
 ### LazyVim
 
+1. Link the repo
+
 ```bash
 mkdir -p ~/.config
 ln -s ~/dotfiles/nvim ~/.config/nvim
+```
+
+2. For the root user:
+
+```bash
+sudo -i
+mkdir -p ~/.config
+ln -s /home/kltpl/dotfiles/nvim ~/.config/nvim
 ```
 
 ### Git
