@@ -79,3 +79,7 @@ ln -s /home/kltpl/dotfiles/nvim ~/.config/nvim
 ```bash
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ```
+
+```zsh
+ln -s /home/kltpl/dotfiles/.gitconfig ~/.gitconfig
+```
