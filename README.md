@@ -46,6 +46,17 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ```
 
+7. To use zsh config as the root user link the dotfiles like below
+
+```bash
+sudo -i
+
+ln -sf /home/kltpl/.oh-my-zsh /root/.oh-my-zsh
+
+ln -sf /home/kltpl/dotfiles/.zshrc /root/.zshrc
+ln -sf /home/kltpl/dotfiles/.p10k.zsh /root/.p10k.zsh
+```
+
 ### LazyVim
 
 ```bash
