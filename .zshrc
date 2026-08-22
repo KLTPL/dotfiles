@@ -125,6 +125,8 @@ alias dotfiles='cd ~/dotfiles/'
 alias ip='ip -color'
 alias grep='grep --color=auto'
 
+
+alias devops='cd /home/kltpl/Desktop/folder/dlubanie-w-kodzie/solvro/wak-wyzw-2026/devops-wakacyjne-wyzwanie-2026/'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
