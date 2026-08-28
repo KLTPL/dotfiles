@@ -10,3 +10,6 @@ vim.keymap.set({ "n", "v" }, "x", '"_X', { desc = "Delete character backwords wi
 
 -- Paste over currently selected text without yanking it
 vim.keymap.set("v", "p", '"_dp', { desc = "Paste without replacing clipboard" })
+
+-- Prevent the space key from moving the cursor in normal and visual mode
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
