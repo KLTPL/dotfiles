@@ -119,14 +119,14 @@ alias folder='cd ~/Desktop/folder/'
 alias yt-converter='cd ~/Desktop/folder/rzeczy/youtube-mp3-converter/'
 alias filip='cd ~/Desktop/folder/dlubanie-w-kodzie/zajecia-filip/chat'
 alias tymek='cd ~/Desktop/folder/dlubanie-w-kodzie/zajecia-tymek/pacman'
-alias solvro='cd ~/Desktop/folder/dlubanie-w-kodzie/solvro/wak-wyzw-2026/'
+alias solvro='cd ~/Documents/solvro/wak-wyzw-2026/'
 alias dotfiles='cd ~/dotfiles/'
 
 alias ip='ip -color'
 alias grep='grep --color=auto'
 
 
-alias devops='cd /home/kltpl/Desktop/folder/dlubanie-w-kodzie/solvro/wak-wyzw-2026/devops-wakacyjne-wyzwanie-2026/'
+alias devops='cd /home/kltpl/Documents/solvro/wak-wyzw-2026/devops-wakacyjne-wyzwanie-2026/'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
