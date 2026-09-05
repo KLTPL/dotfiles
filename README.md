@@ -1,5 +1,9 @@
 # My dotfiles repo
 
+## LazyVim
+
+I write about my LazyVim config in the `/nvim/README.md` file.
+
 ## Setup
 
 First clone this repo in home dir
