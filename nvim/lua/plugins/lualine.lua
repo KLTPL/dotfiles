@@ -8,7 +8,6 @@ return {
     table.insert(opts.sections.lualine_y, 1, {
       "tabs",
       mode = 0, -- Shows tab numbers
-      mode = 0,
       tabs_color = {
         active = "lualine_a_normal",
         inactive = "lualine_y_normal",
