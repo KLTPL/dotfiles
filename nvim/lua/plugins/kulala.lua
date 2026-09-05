@@ -3,10 +3,9 @@ return {
   -- Load before session save/restore so VimLeavePre and SessionLoadPost hooks are registered.
   event = { "SessionLoadPost", "VimLeavePre" },
   keys = {
-    { "<leader>R", "<cmd>lua require('kulala').run()<cr>", desc = "Wykonaj zapytanie HTTP" },
-    { "<leader>Rs", desc = "Send request" },
-    { "<leader>Ra", desc = "Send all requests" },
-    { "<leader>Rb", desc = "Open scratchpad" },
+    { "<leader>rr", "<cmd>lua require('kulala').run()<cr>", desc = "Run Kulala request" },
+    { "<leader>rt", "<cmd>lua require('kulala').toggle_view()<cr>", desc = "Toggle Kulala UI" },
+    { "<leader>rq", "<cmd>lua require('kulala').close()<cr>", desc = "Close Kulala UI" },
   },
   -- See opts.lsp.enforce_external_script_naming_convention
   -- to restrict LSP capabilities to *.http, *.http.js, *.http.ts and *.http.lua files.
