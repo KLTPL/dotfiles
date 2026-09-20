@@ -1,84 +1,70 @@
 # My dotfiles repo
 
+This repository uses [GNU Stow](https://www.gnu.org/software/stow/) to manage configuration files via automated symlinking.
+
+## Repository Structure
+
+To work with Stow, the repository is organized into "packages" (folders) that mirror the directory structure of your home folder.
+
 ## LazyVim
 
-I write about my LazyVim config in the `/nvim/README.md` file.
+I write about my LazyVim config in the `nvim/.config/nvim/README.md` file.
 
-## Setup
+### Setup
 
-First clone this repo in home dir
+First, clone this repo into your home directory:
 
 ```bash
-git clone https://github.com/KLTPL/dotfiles
+git clone [https://github.com/KLTPL/dotfiles](https://github.com/KLTPL/dotfiles) ~/dotfiles
 ```
 
-### Zsh
+#### 1. Install Dependencies
 
-1. Download zsh
+Install Zsh and GNU Stow:
 
-   ```bash
-   sudo apt update
-   sudo apt install zsh
-   ```
+```bash
+sudo apt update
+sudo apt install zsh stow
+```
 
-2. Download [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/)
+#### 2. Configure Zsh Environment
 
-3. Download all plugins using the zsh-install.sh script
+1. Download [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/).
+2. Download all plugins using the provided installation script:
 
    ```bash
    ~/dotfiles/zsh-install.sh
    ```
 
-4. Set Zsh as the default shell
+3. Set Zsh as the default shell:
 
    ```bash
    chsh -s $(which zsh)
    ```
 
-5. Create symlink for zsh
+4. If Powerlevel10k was installed via the `zsh-install.sh` script, go to the [powerlevel10k github page](https://github.com/romkatv/powerlevel10k) to download the necessary additional fonts.
 
-   ```bash
-   ln -s ~/dotfiles/.zshrc ~/.zshrc
-   ```
+#### 3. Apply Configurations with Stow
 
-6. If powerlevel10k was installed via zsh-install.sh:
-   - go to [powerlevel10k github page](https://github.com/romkatv/powerlevel10k) to download additional fonts
-   - create a symlink for the powerlevel10k config file
-
-   ```bash
-   ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
-   ```
-
-7. To use zsh config as the root user link the dotfiles like below
-
-   ```bash
-   sudo -i
-
-   ln -sf /home/kltpl/.oh-my-zsh /root/.oh-my-zsh
-
-   ln -sf /home/kltpl/dotfiles/.zshrc /root/.zshrc
-   ln -sf /home/kltpl/dotfiles/.p10k.zsh /root/.p10k.zsh
-   ```
-
-### LazyVim
-
-1. Link the repo
-
-   ```bash
-   mkdir -p ~/.config
-   ln -s ~/dotfiles/nvim ~/.config/nvim
-   ```
-
-2. For the root user:
-
-   ```bash
-   sudo -i
-   mkdir -p ~/.config
-   ln -s /home/kltpl/dotfiles/nvim ~/.config/nvim
-   ```
-
-### Git
+Instead of manually linking each file, use Stow from within the `dotfiles` directory to generate all symlinks automatically. Ensure you have moved your old configuration files (or deleted default ones) to avoid Stow conflict errors.
 
 ```bash
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+cd ~/dotfiles
+
+# Stow all your packages
+stow zsh git nvim claude
+```
+
+#### 4. Root User Configuration
+
+To use your Zsh and Neovim configurations as the root user, use Stow's `-t` (target) and `-d` (directory) flags to link the files into the `/root` home directory, while maintaining the manual link for the `.oh-my-zsh` directory:
+
+```bash
+sudo -i
+
+# Link the Oh My Zsh framework
+ln -sf /home/kltpl/.oh-my-zsh /root/.oh-my-zsh
+
+# Use Stow to link the dotfiles directly into /root
+stow -d /home/kltpl/dotfiles -t /root zsh nvim
 ```

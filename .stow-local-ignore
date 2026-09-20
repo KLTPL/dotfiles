@@ -1,0 +1,16 @@
+# Ignore Git tracking files
+\.git
+\.gitignore
+
+# Ignore installation scripts you run manually
+zsh-install\.sh
+
+# Ignore documentation
+README\.md
+LICENSE
+
+# Ignore OS-generated files (like macOS folder settings)
+\.DS_Store
+
+# Ignore the stow-local-ignore file itself
+\.stow-local-ignore
