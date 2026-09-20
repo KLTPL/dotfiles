@@ -121,6 +121,7 @@ alias filip='cd ~/Desktop/folder/dlubanie-w-kodzie/zajecia-filip/chat'
 alias tymek='cd ~/Desktop/folder/dlubanie-w-kodzie/zajecia-tymek/pacman'
 alias solvro='cd ~/Documents/solvro/wak-wyzw-2026/'
 alias dotfiles='cd ~/dotfiles/'
+alias projects='cd ~/Documents/projects'
 
 alias ip='ip -color'
 alias grep='grep --color=auto'
