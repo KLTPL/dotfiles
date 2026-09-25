@@ -2,8 +2,8 @@
 
 ## Git & Version Control
 
-- **Manual Commits Only:** Never run `git commit` or `git push` autonomously. Draft commit messages and summarize file changes for review, leaving execution to the user.
 - **Commit Formatting:** Follow Conventional Commits format (`type(scope): subject`).
+- **Commit body**: Keep the body section of a commit concise, list all the changes but without explaining how every change is implemented, unless there is something unusual about the implementation.
 - **No AI Attribution:** Never include `Co-Authored-By: Claude` or any AI attribution footers in drafted commit messages or pull requests.
 
 ## Scope & Operational Boundaries
