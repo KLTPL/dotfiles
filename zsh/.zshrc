@@ -111,7 +111,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias laby='cd /home/kltpl/Desktop/folder/studia/Semestr\ 2/Kurs\ Programowania'
+alias studia='cd /home/kltpl/Desktop/folder/studia/Semestr\ 3/'
+alias labys='cd /home/kltpl/Desktop/folder/studia/Semestr\ 3/Systemy\ operacyjne/'
+alias labyt='cd /home/kltpl/Desktop/folder/studia/Semestr\ 3/Technologia\ programowania/'
+alias lektorat='cd ~/Desktop/folder/studia/Semestr\ 3/Lektorat\ A2\ Niemiecki/'
 alias dlubanie='cd ~/Desktop/folder/dlubanie-w-kodzie/'
 alias local-music='cd ~/Desktop/folder/rzeczy/local-music/'
 alias rzeczy='cd ~/Desktop/folder/rzeczy/'
