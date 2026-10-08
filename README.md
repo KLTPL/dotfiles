@@ -15,7 +15,7 @@ I write about my LazyVim config in the `nvim/.config/nvim/README.md` file.
 First, clone this repo into your home directory:
 
 ```bash
-git clone [https://github.com/KLTPL/dotfiles](https://github.com/KLTPL/dotfiles) ~/dotfiles
+git clone https://github.com/KLTPL/dotfiles ~/dotfiles
 ```
 
 #### 1. Install Dependencies
