@@ -18,6 +18,7 @@
 - **Error Handling:** Avoid generic catch-alls (`return null`, `return []`, log-and-continue) and empty `catch` blocks. Add `try/catch` only when explicit, actionable recovery logic exists. If an error cannot be handled locally, let it propagate; stack traces take precedence over silent degradation.
 - **Modularity & File Length:** Keep code modular. If a code file approaches ~300 lines, split it into cohesive modules rather than extending a monolithic file.
 - **Dependencies:** Do not add third-party dependencies unless strictly necessary and confirmed with the user.
+- **Language**: always write code and comments in English if not specified otherwise.
 
 ## Testing & Verification
 
