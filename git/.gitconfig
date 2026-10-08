@@ -4,6 +4,10 @@
 	email = 105875079+KLTPL@users.noreply.github.com
 	name = Kacper Lebiedziński
 [credential]
-	helper = store
+	credentialStore = secretservice
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
 [core]
 	autocrlf = false
+[credential "https://dev.azure.com"]
+	useHttpPath = true
