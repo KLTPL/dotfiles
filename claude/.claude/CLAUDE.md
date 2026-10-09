@@ -25,3 +25,9 @@
 - **Test Integrity:** When a test fails, treat production code as incorrect until proven otherwise. Never weaken assertions, loosen test matchers, or skip tests to make a suite pass.
 - **Root-Cause Analysis:** Diagnose why a test failed before making edits. If a test assertion is legitimately obsolete due to requirement changes, explain why before altering the test logic.
 - **Self-Verification:** Run the project's local test and lint checks after modifications to verify logic before handing back work.
+
+## Claude Code Skills
+
+- **Own skills:** Store custom skills as folders in `~/dotfiles/claude/.claude/skills/`.
+- **Third-party skills:** Install other people's skills as plugins, never with `npx skills add`. If the repo publishes a plugin marketplace, add it to `extraKnownMarketplaces` and `enabledPlugins` in `~/dotfiles/claude/.claude/settings.json`. Otherwise, add a `git-subdir` entry for the skill folder (with `"skills": ["./"]`) to `~/dotfiles/.claude-plugin/marketplace.json`, then run `claude plugin marketplace update kltpl-skills` and `claude plugin install <name>@kltpl-skills`.
+- **Settings check:** `claude plugin` commands rewrite `settings.json`; afterwards confirm the `kltpl-skills` marketplace entry still has `"autoUpdate": true`.

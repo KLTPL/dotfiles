@@ -1,0 +1,29 @@
+{
+  "name": "kltpl-skills",
+  "description": "Third-party skills picked from repos that don't publish a plugin marketplace",
+  "owner": {
+    "name": "KLTPL"
+  },
+  "plugins": [
+    {
+      "name": "apple-design",
+      "description": "From emilkowalski/skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/emilkowalski/skills.git",
+        "path": "skills/apple-design"
+      },
+      "skills": ["./"]
+    },
+    {
+      "name": "web-design-guidelines",
+      "description": "From vercel-labs/agent-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/vercel-labs/agent-skills.git",
+        "path": "skills/web-design-guidelines"
+      },
+      "skills": ["./"]
+    }
+  ]
+}
