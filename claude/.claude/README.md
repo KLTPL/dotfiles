@@ -66,6 +66,8 @@ Don't enable many design skills globally. Their descriptions overlap, so Claude 
 - **Third-party skills without one** (apple-design, web-design-guidelines) are entries in my catalog, `.claude-plugin/marketplace.json` at the root of this repo, plus a line in `enabledPlugins`. Each entry downloads only that skill's folder from the author's repo.
 - Never use `npx skills add`. It installs outside this repo.
 
+`settings.json` reads the catalog from GitHub (`KLTPL/dotfiles`), not from the local folder, so catalog changes apply only after I commit and push them. A local folder source would make the Claude desktop app load these skills under their version code (`e8a175de22ae-e92e3951:apple-design`) instead of `apple-design:apple-design`.
+
 On a new machine, the first Claude session downloads the plugins and the next session loads them. `autoUpdate` on my catalog keeps them up to date. `claude plugin` commands can drop it from `settings.json`, so check it's still there after running them.
 
 ## 💻 Using my skills on another PC

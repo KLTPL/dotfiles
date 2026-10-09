@@ -15,8 +15,8 @@
     },
     "kltpl-skills": {
       "source": {
-        "source": "directory",
-        "path": "/home/kltpl/dotfiles"
+        "source": "github",
+        "repo": "KLTPL/dotfiles"
       },
       "autoUpdate": true
     }
