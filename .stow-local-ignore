@@ -4,6 +4,7 @@
 
 # Ignore installation scripts you run manually
 zsh-install\.sh
+claude-skills-install\.sh
 
 # Ignore documentation
 README\.md

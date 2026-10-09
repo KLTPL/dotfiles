@@ -55,7 +55,17 @@ cd ~/dotfiles
 stow zsh git nvim claude
 ```
 
-#### 4. Root User Configuration
+#### 4. Install Claude Code Skills
+
+Third-party skills that aren't stored in this repo are installed with the [skills CLI](https://github.com/vercel-labs/skills) (requires Node.js):
+
+```bash
+~/dotfiles/claude-skills-install.sh
+```
+
+Update them later with `npx skills update -g`.
+
+#### 5. Root User Configuration
 
 To use your Zsh and Neovim configurations as the root user, use Stow's `-t` (target) and `-d` (directory) flags to link the files into the `/root` home directory, while maintaining the manual link for the `.oh-my-zsh` directory:
 
