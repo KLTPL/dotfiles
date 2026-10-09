@@ -1,6 +1,6 @@
 {
   "name": "kltpl-skills",
-  "description": "Third-party skills picked from repos that don't publish a plugin marketplace",
+  "description": "My own skills, plus third-party skills picked from repos that don't publish a plugin marketplace",
   "owner": {
     "name": "KLTPL"
   },
@@ -23,6 +23,12 @@
         "url": "https://github.com/vercel-labs/agent-skills.git",
         "path": "skills/web-design-guidelines"
       },
+      "skills": ["./"]
+    },
+    {
+      "name": "llm-council",
+      "description": "My own skill, stored in this repo",
+      "source": "./claude/.claude/skills/llm-council",
       "skills": ["./"]
     }
   ]
