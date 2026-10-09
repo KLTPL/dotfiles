@@ -6,11 +6,15 @@ This repository uses [GNU Stow](https://www.gnu.org/software/stow/) to manage co
 
 To work with Stow, the repository is organized into "packages" (folders) that mirror the directory structure of your home folder.
 
+## Claude Code
+
+I write about my Claude Code skills and design workflow in the `claude/.claude/README.md` file.
+
 ## LazyVim
 
 I write about my LazyVim config in the `nvim/.config/nvim/README.md` file.
 
-### Setup
+## Setup
 
 First, clone this repo into your home directory:
 
