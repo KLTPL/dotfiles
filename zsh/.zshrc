@@ -131,9 +131,19 @@ alias projects='cd ~/Documents/projects'
 alias ip='ip -color'
 alias grep='grep --color=auto'
 
-# Open nvim in its own window (see nvim/.local/share/applications/nvim-ide.desktop)
+# Open nvim in its own maximized window (see nvim/.local/share/applications/nvim-ide.desktop).
+# The calling terminal is hidden (minimized and removed from the panel and Alt+Tab) meanwhile
+# and restored once nvim exits (needs xdotool and wmctrl).
 nv() {
-  gnome-terminal --class=nvim-ide --name=nvim-ide --working-directory="$PWD" -- nvim "$@"
+  local win=$(xdotool getactivewindow)
+  wmctrl -i -r "$win" -b add,skip_taskbar,skip_pager
+  xdotool windowminimize "$win"
+  {
+    gnome-terminal --wait --class=nvim-ide --name=nvim-ide --working-directory="$PWD" --maximize -- nvim "$@"
+  } always {
+    wmctrl -i -r "$win" -b remove,skip_taskbar,skip_pager
+    wmctrl -i -a "$win"
+  }
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
