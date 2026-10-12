@@ -20,6 +20,10 @@ Makes tabpages separated, so they don't share the same buffers, making them effe
 
 Use with the [lualine.nvim](#lualine-nvim) plugin to see tabpages' numbers clearly (by default scope makes the tabs disappear when there's only one buffer opened in a tabpage).
 
+#### ⬩ [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+
+File explorer, enabled through the LazyVim extra. Dotfiles are shown by default.
+
 ### 🖥️ UI
 
 <a id="lualine-nvim"></a>

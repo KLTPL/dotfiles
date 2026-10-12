@@ -1,13 +1,12 @@
 return {
   {
-    "folke/snacks.nvim",
+    "nvim-neo-tree/neo-tree.nvim",
     opts = {
-      picker = {
-        sources = {
-          explorer = {
-            -- Show dotfiles by default (toggle with H)
-            hidden = true,
-          },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = true,
         },
       },
     },
