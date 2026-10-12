@@ -59,6 +59,8 @@ cd ~/dotfiles
 stow zsh git nvim claude
 ```
 
+The `nvim` package also links a **Neovim IDE** launcher (`nvim/.local/share/applications/nvim-ide.desktop`) into `~/.local/share/applications/`. It opens nvim in its own `gnome-terminal` window class, so Alt+Tab shows it as a separate app instead of another terminal. It assumes `gnome-terminal` is installed.
+
 #### 4. Root User Configuration
 
 To use your Zsh and Neovim configurations as the root user, use Stow's `-t` (target) and `-d` (directory) flags to link the files into the `/root` home directory, while maintaining the manual link for the `.oh-my-zsh` directory:

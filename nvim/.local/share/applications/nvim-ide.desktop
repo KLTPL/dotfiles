@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Neovim IDE
+Comment=LazyVim in a dedicated terminal window
+Exec=gnome-terminal --class=nvim-ide --name=nvim-ide -- nvim
+Icon=nvim
+Terminal=false
+Categories=Development;TextEditor;
+StartupWMClass=nvim-ide
