@@ -28,6 +28,10 @@ Use with the [lualine.nvim](#lualine-nvim) plugin to see tabpages' numbers clear
 
 I use it to move tabpage labels (numbers you see on the top right buffer powerd by the bufferline.nvim plugin) to the bottom right bar.
 
+#### ⬩ [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+
+Terminal buffers show a custom label instead of `<pid>:/usr/bin/zsh`. Run `:TermName <label>` in a terminal to set it (defaults to `term <bufnr>`). The command lives in `lua/config/autocmds.lua`, the display logic in `lua/plugins/bufferline.lua`.
+
 ### 🛠️ Tools
 
 #### ⬩ [kulala.nvim](https://github.com/mistweaverco/kulala.nvim)
