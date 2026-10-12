@@ -14,6 +14,9 @@ vim.keymap.set("v", "p", '"_dp', { desc = "Paste without replacing clipboard" })
 -- Prevent the space key from moving the cursor in normal and visual mode
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
+-- Leave terminal mode with a single key instead of <C-\><C-n>
+vim.keymap.set("t", "<C-q>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+
 -- Tab navigation
 vim.keymap.set("n", "<leader><tab>h", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 vim.keymap.set("n", "<leader><tab>l", "<cmd>tabnext<cr>", { desc = "Next Tab" })
