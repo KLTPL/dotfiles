@@ -128,6 +128,11 @@ alias projects='cd ~/Documents/projects'
 alias ip='ip -color'
 alias grep='grep --color=auto'
 
+# Open nvim in its own window (see nvim/.local/share/applications/nvim-ide.desktop)
+nv() {
+  gnome-terminal --class=nvim-ide --name=nvim-ide --working-directory="$PWD" -- nvim "$@"
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
