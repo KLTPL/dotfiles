@@ -1,0 +1,4 @@
+#!/bin/sh
+# Open nvim maximized in its own terminal window class (nvim-ide), so it is a separate entry in Alt+Tab.
+# This is the only place that names the terminal; the nv zsh function and nvim-ide.desktop call this script.
+exec kitty --class=nvim-ide --directory="$PWD" --start-as=maximized nvim "$@"

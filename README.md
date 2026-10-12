@@ -56,12 +56,12 @@ Instead of manually linking each file, use Stow from within the `dotfiles` direc
 cd ~/dotfiles
 
 # Stow all your packages
-stow zsh git nvim claude
+stow zsh git nvim kitty claude
 ```
 
-The `nvim` package also links a **Neovim IDE** launcher (`nvim/.local/share/applications/nvim-ide.desktop`) into `~/.local/share/applications/`. It opens nvim in its own `gnome-terminal` window class, so Alt+Tab shows it as a separate app instead of another terminal. It assumes `gnome-terminal` is installed.
+The `nvim` package also links an `nvim-ide` script into `~/.local/bin/` and a **Neovim IDE** launcher (`nvim/.local/share/applications/nvim-ide.desktop`) into `~/.local/share/applications/`. The script opens nvim maximized in its own terminal window class, so Alt+Tab shows it as a separate app instead of another terminal. It is the only place that names the terminal (currently `kitty`), so change the terminal there.
 
-The `nv` zsh function does the same from the shell: it opens nvim maximized in that window class, hides the terminal you ran it from, and brings it back when nvim exits. It requires an X11 session and the `xdotool` and `wmctrl` packages:
+The `nv` zsh function calls the same script, hides the terminal you ran it from, and brings it back when nvim exits. It requires an X11 session and the `xdotool` and `wmctrl` packages:
 
 ```bash
 sudo apt install xdotool wmctrl
