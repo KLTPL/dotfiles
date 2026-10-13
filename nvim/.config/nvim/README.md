@@ -36,6 +36,10 @@ I use it to move tabpage labels (numbers you see on the top right buffer powerd 
 
 Terminal buffers show a custom label instead of `<pid>:/usr/bin/zsh`. Run `:TermName <label>` in a terminal to set it (defaults to `term <bufnr>`). The command lives in `lua/config/autocmds.lua`, the display logic in `lua/plugins/bufferline.lua`.
 
+#### ⬩ [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+
+Renders markdown in the buffer, enabled through the LazyVim `lang.markdown` extra. Rendering is off by default; toggle it with `<leader>um`.
+
 ### 🛠️ Tools
 
 #### ⬩ [kulala.nvim](https://github.com/mistweaverco/kulala.nvim)
