@@ -16,6 +16,8 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Leave terminal mode with a single key instead of <C-\><C-n>
 vim.keymap.set("t", "<C-q>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+-- <C-q> is a built-in alias for <C-v> (visual block); disable it so it's harmless outside terminal mode
+vim.keymap.set("n", "<C-q>", "<Nop>", { desc = "Disabled (alias for <C-v>)" })
 
 -- Move focus to a regular window (not the explorer, quickfix, a float, ...), so a terminal never replaces
 -- or splits a special window. Keeps the terminal in the current tab, which matters because of scope.nvim.
