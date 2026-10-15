@@ -12,6 +12,8 @@ Blocks you from using the mouse and ineffective keymaps.
 
 Displays tips under the selected line on how to move to a particular place.
 
+Currently disabled (`enabled = false` in `lua/plugins/precognition.lua`).
+
 ### 📈 Workflow and productivity
 
 #### ⬩ [scope.nvim](https://github.com/tiagovla/scope.nvim)
