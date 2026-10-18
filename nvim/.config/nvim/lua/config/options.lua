@@ -16,3 +16,6 @@ vim.opt.titlestring = "nvim: %{fnamemodify(getcwd(), ':t')}"
 -- so its output lands in scrollback and can be scrolled/selected in normal mode
 vim.env.CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN = "1"
 vim.opt.scrollback = 100000
+
+-- Keep the markdown-preview browser tab open when switching to another buffer
+vim.g.mkdp_auto_close = 0
