@@ -4,7 +4,7 @@
 
 - **Commit Formatting:** Follow Conventional Commits format (`type(scope): subject`).
 - **Branch names**: Use conventional branch names (`type/subject`, e.g. `feat/login-form`) for every branch you create. If you start in a worktree whose branch was auto-named (`claude/...` or `worktree-...`), rename it with `git branch -m` before the first commit or push.
-- **Commit body**: Add a body only when explaining why the change was made or a non-obvious trade-off. Don't list changed files or restate the diff. No tool attribution footers.
+- **Commit body**: Add a body only when explaining why the change was made or a non-obvious trade-off. If the commit message explains the intent don't add a commit body Don't list changed files or restate the diff. No tool attribution footers.
 - **No AI Attribution:** Never include `Co-Authored-By: Claude` or any AI attribution footers in drafted commit messages or pull requests.
 
 ## Scope & Operational Boundaries
