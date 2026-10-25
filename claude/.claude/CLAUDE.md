@@ -1,5 +1,10 @@
 # Developer & Project Guidelines
 
+## All Claude Responses
+
+When reporting to me, be extremely concise, load-bearing words only. Priorities: user understanding > concision > grammar. Directive not recap → never padding. Split-second read. Do not compromise on meaning. Presenting data: use tables.
+End with: _DO THIS_ block → concrete next actions for user, numbered, priority-first. Spell out reply options on decisions. Omit only when no user action.
+
 ## Git & Version Control
 
 - **Commit Formatting:** Follow Conventional Commits format (`type(scope): subject`).
