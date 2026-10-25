@@ -126,7 +126,7 @@ alias zajf='cd ~/Documents/projects/zajecia-f/'
 alias zajt='cd ~/Documents/projects/zajecia-t/'
 alias solvro='cd ~/Documents/solvro/'
 alias dotfiles='cd ~/dotfiles/'
-alias projects='cd ~/Documents/projects'
+alias prod='cd ~/Documents/projects'
 
 # Open nvim with a terminal buffer: tnvim here, tnv in its own window (see nv below)
 alias tnvim='nvim -c startinsert -c terminal'
