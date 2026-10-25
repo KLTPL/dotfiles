@@ -128,6 +128,32 @@ alias solvro='cd ~/Documents/solvro/'
 alias dotfiles='cd ~/dotfiles/'
 alias projects='cd ~/Documents/projects'
 
+# Open nvim with a terminal buffer: tnvim here, tnv in its own window (see nv below)
+alias tnvim='nvim -c startinsert -c terminal'
+alias tnv='nv -c startinsert -c terminal'
+
+# Open nvim with Claude Code in a terminal buffer: cnvim here, cnv in its own window (see nv below).
+# Arguments go to claude (e.g. cnvim -w feat-x, cnv -r), and nvim follows Claude into a worktree
+# (see nvim/.config/nvim/lua/util/claude_term.lua).
+_claude_nvim() {
+  local launcher=$1
+  shift
+  CLAUDE_TERM_ARGS="${(pj:\n:)@}" $launcher -c startinsert -c 'lua require("util.claude_term").open()'
+}
+cnvim() { _claude_nvim nvim "$@" }
+cnv() { _claude_nvim nv "$@" }
+
+# Tab completion for cnvim and cnv: -w completes the names of this repo's Claude worktrees
+_cnvim() {
+  local main=${$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null):h}
+  local -a worktrees=($main/.claude/worktrees/*(N/:t))
+  _arguments \
+    '(-w --worktree)'{-w,--worktree}'[run in a git worktree]::worktree name:compadd -a worktrees' \
+    '(-r --resume -c --continue)'{-r,--resume}'[resume a session (picker without a name)]::session name: ' \
+    '(-r --resume -c --continue)'{-c,--continue}'[continue the most recent session]'
+}
+compdef _cnvim cnvim cnv
+
 alias ip='ip -color'
 alias grep='grep --color=auto'
 
