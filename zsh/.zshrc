@@ -135,20 +135,43 @@ alias tnv='nv -c startinsert -c terminal'
 # Open nvim with Claude Code in a terminal buffer: cnvim here, cnv in its own window (see nv below).
 # Arguments go to claude (e.g. cnvim -w feat-x, cnv -r), and nvim follows Claude into a worktree
 # (see nvim/.config/nvim/lua/util/claude_term.lua).
+_claude_worktrees_dir() {
+  print -r -- ${$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null):h}/.claude/worktrees
+}
 _claude_nvim() {
   local launcher=$1
   shift
-  CLAUDE_TERM_ARGS="${(pj:\n:)@}" $launcher -c startinsert -c 'lua require("util.claude_term").open()'
+  local -a args=("$@")
+  local i=${args[(i)-w]}
+  (( i > $#args )) && i=${args[(i)--worktree]}
+  # A bare -w gets the next free new-worktree-N name instead of Claude's random one
+  if (( i <= $#args )) && [[ -z ${args[i+1]} || ${args[i+1]} == -* ]]; then
+    local dir=$(_claude_worktrees_dir) n=1
+    while [[ -e $dir/new-worktree-$n ]]; do (( n++ )); done
+    args[i+1,i]=(new-worktree-$n)
+  fi
+  CLAUDE_TERM_ARGS="${(pj:\n:)args}" $launcher -c startinsert -c 'lua require("util.claude_term").open()'
 }
 cnvim() { _claude_nvim nvim "$@" }
 cnv() { _claude_nvim nv "$@" }
 
-# Tab completion for cnvim and cnv: -w completes the names of this repo's Claude worktrees
+# Tab completion for cnvim and cnv: -w completes this repo's Claude worktrees, each shown with its
+# current branch, since the folder keeps its first name when Claude renames the branch
+_claude_worktree_names() {
+  local dir=$(_claude_worktrees_dir) wt line
+  local -a items
+  for line in ${(f)"$(git worktree list --porcelain 2>/dev/null)"}; do
+    case $line in
+      worktree\ *) wt=${line#worktree } ;;
+      branch\ *) [[ $wt == $dir/* ]] && items+=("${wt:t}:${line#branch refs/heads/}") ;;
+      detached) [[ $wt == $dir/* ]] && items+=("${wt:t}:(detached HEAD)") ;;
+    esac
+  done
+  _describe 'worktree' items
+}
 _cnvim() {
-  local main=${$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null):h}
-  local -a worktrees=($main/.claude/worktrees/*(N/:t))
   _arguments \
-    '(-w --worktree)'{-w,--worktree}'[run in a git worktree]::worktree name:compadd -a worktrees' \
+    '(-w --worktree)'{-w,--worktree}'[run in a git worktree]::worktree name:_claude_worktree_names' \
     '(-r --resume -c --continue)'{-r,--resume}'[resume a session (picker without a name)]::session name: ' \
     '(-r --resume -c --continue)'{-c,--continue}'[continue the most recent session]'
 }

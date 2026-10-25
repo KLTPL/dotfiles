@@ -76,7 +76,7 @@ These zsh commands open nvim with a terminal or Claude Code already running in a
 | `cnvim [args]` | nvim with Claude Code, in the current window |
 | `cnv [args]` | nvim with Claude Code, in its own window (like `nv`) |
 
-`cnvim` and `cnv` pass their arguments to `claude`, e.g. `cnv -w feat-auth` (new or existing worktree), `cnv -r` (resume picker) or `cnv -c` (continue the last session). Tab after `-w` completes the repo's existing Claude worktrees. When Claude moves into a worktree, the nvim tab follows it (`:tcd`), so the explorer and pickers show the worktree's files. This is done by `nvim/.config/nvim/lua/util/claude_term.lua` and needs Linux, since it reads Claude's directory from `/proc`.
+`cnvim` and `cnv` pass their arguments to `claude`, e.g. `cnv -w feat-auth` (new or existing worktree), `cnv -r` (resume picker) or `cnv -c` (continue the last session). A bare `-w` names the worktree `new-worktree-<N>` instead of Claude's random name. Tab after `-w` completes the repo's existing Claude worktrees and shows each one's current branch, since the folder keeps its first name when the branch is renamed. When Claude moves into a worktree, the nvim tab follows it (`:tcd`), so the explorer and pickers show the worktree's files. This is done by `nvim/.config/nvim/lua/util/claude_term.lua` and needs Linux, since it reads Claude's directory from `/proc`.
 
 #### 4. Root User Configuration
 
