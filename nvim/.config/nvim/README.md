@@ -36,7 +36,7 @@ I use it to move tabpage labels (numbers you see on the top right buffer powerd 
 
 #### ⬩ [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 
-Terminal buffers show a custom label instead of `<pid>:/usr/bin/zsh`. Run `:TermName <label>` in a terminal to set it (defaults to `term <bufnr>`). The command lives in `lua/config/autocmds.lua`, the display logic in `lua/plugins/bufferline.lua`.
+Terminal buffers show a custom label instead of `<pid>:/usr/bin/zsh`. Run `:TermName <label>` in a terminal to set it (defaults to `term <bufnr>`). Labels listed in `lua/config/term_icons.lua` (`claude`, `interactive`, `exec`, `logs`) get their own icon; `<leader>Tc` opens Claude Code in a new terminal already labelled `claude`. The command lives in `lua/config/autocmds.lua`, the display logic in `lua/plugins/bufferline.lua`.
 
 #### ⬩ [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 
