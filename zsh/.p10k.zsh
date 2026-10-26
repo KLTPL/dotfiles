@@ -363,9 +363,9 @@
   # Version control background colors.
   typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=40
   typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=220
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=440
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=40
   typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=220
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=244
 
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
@@ -393,11 +393,11 @@
     fi
 
     # Styling for different parts of Git status.
-    local       meta='%7F' # white foreground
-    local      clean='%0F' # black foreground
-    local   modified='%0F' # black foreground
-    local  untracked='%0F' # black foreground
-    local conflicted='%1F' # red foreground
+    local       meta='%16F' # black foreground
+    local      clean='%16F' # black foreground
+    local   modified='%16F' # black foreground
+    local  untracked='%16F' # black foreground
+    local conflicted='%160F' # red foreground
 
     local res
 
