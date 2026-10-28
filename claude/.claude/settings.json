@@ -5,7 +5,8 @@
     "frontend-design@claude-plugins-official": true,
     "apple-design@kltpl-skills": true,
     "web-design-guidelines@kltpl-skills": true,
-    "lua-lsp@claude-plugins-official": true
+    "lua-lsp@claude-plugins-official": true,
+    "vibe-wise@vibe-wise": true
   },
   "extraKnownMarketplaces": {
     "humanizer": {
@@ -18,6 +19,13 @@
       "source": {
         "source": "github",
         "repo": "KLTPL/dotfiles"
+      },
+      "autoUpdate": true
+    },
+    "vibe-wise": {
+      "source": {
+        "source": "github",
+        "repo": "nykooi1/vibe-wise"
       },
       "autoUpdate": true
     }
