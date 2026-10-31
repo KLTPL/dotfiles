@@ -19,9 +19,11 @@ vim.keymap.set("v", "p", "P", { desc = "Paste without replacing clipboard" })
 -- Prevent the space key from moving the cursor in normal and visual mode
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
--- Leave terminal mode with a single key instead of <C-\><C-n>
+-- <C-q> leaves any mode: <Esc> can't do it in terminal mode, where the running app needs it
 vim.keymap.set("t", "<C-q>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
--- <C-q> is a built-in alias for <C-v> (visual block); disable it so it's harmless outside terminal mode
+vim.keymap.set("i", "<C-q>", "<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("x", "<C-q>", "<Esc>", { desc = "Exit visual mode" })
+-- <C-q> is a built-in alias for <C-v> (visual block); disable it so an extra press in normal mode is harmless
 vim.keymap.set("n", "<C-q>", "<Nop>", { desc = "Disabled (alias for <C-v>)" })
 
 -- Move focus to a regular window (not the explorer, quickfix, a float, ...), so a terminal never replaces
