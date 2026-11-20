@@ -7,7 +7,8 @@
     "web-design-guidelines@kltpl-skills": true,
     "lua-lsp@claude-plugins-official": true,
     "vibe-wise@vibe-wise": true,
-    "mattpocock-skills@claude-plugins-official": true
+    "mattpocock-skills@claude-plugins-official": true,
+    "modern-web-guidance@googlechrome": true
   },
   "extraKnownMarketplaces": {
     "humanizer": {
@@ -27,6 +28,13 @@
       "source": {
         "source": "github",
         "repo": "nykooi1/vibe-wise"
+      },
+      "autoUpdate": true
+    },
+    "googlechrome": {
+      "source": {
+        "source": "github",
+        "repo": "GoogleChrome/modern-web-guidance"
       },
       "autoUpdate": true
     }
