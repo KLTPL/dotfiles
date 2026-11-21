@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "unsplash": {
+      "command": "npx",
+      "args": ["-y", "@hanoak/unsplash-mcp-server@1.2.1"],
+      "env": {
+        "UNSPLASH_ACCESS_KEY": "${UNSPLASH_ACCESS_KEY}",
+        "UNSPLASH_APP_NAME": "${UNSPLASH_APP_NAME}"
+      }
+    }
+  }
+}

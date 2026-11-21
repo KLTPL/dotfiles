@@ -218,3 +218,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Machine-local secrets (API keys, e.g. UNSPLASH_ACCESS_KEY); not tracked in dotfiles.
+[[ ! -f ~/.secrets.zsh ]] || source ~/.secrets.zsh

@@ -8,7 +8,9 @@
     "lua-lsp@claude-plugins-official": true,
     "vibe-wise@vibe-wise": true,
     "mattpocock-skills@claude-plugins-official": true,
-    "modern-web-guidance@googlechrome": true
+    "modern-web-guidance@googlechrome": true,
+    "figma@claude-plugins-official": true,
+    "supabase@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "humanizer": {

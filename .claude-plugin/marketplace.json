@@ -30,6 +30,11 @@
       "description": "My own skill, stored in this repo",
       "source": "./claude/.claude/skills/llm-council",
       "skills": ["./"]
+    },
+    {
+      "name": "unsplash",
+      "description": "Unsplash MCP server, community package pinned in this repo",
+      "source": "./plugins/unsplash"
     }
   ]
 }
