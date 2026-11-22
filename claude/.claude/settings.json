@@ -10,7 +10,9 @@
     "mattpocock-skills@claude-plugins-official": true,
     "modern-web-guidance@googlechrome": true,
     "figma@claude-plugins-official": true,
-    "supabase@claude-plugins-official": true
+    "supabase@claude-plugins-official": true,
+    "unsplash@kltpl-skills": true,
+    "remotion-best-practices@kltpl-skills": true
   },
   "extraKnownMarketplaces": {
     "humanizer": {
