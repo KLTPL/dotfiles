@@ -26,6 +26,16 @@
       "skills": ["./"]
     },
     {
+      "name": "remotion-best-practices",
+      "description": "From remotion-dev/skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/remotion-dev/skills.git",
+        "path": "skills/remotion-best-practices"
+      },
+      "skills": ["./"]
+    },
+    {
       "name": "llm-council",
       "description": "My own skill, stored in this repo",
       "source": "./claude/.claude/skills/llm-council",
