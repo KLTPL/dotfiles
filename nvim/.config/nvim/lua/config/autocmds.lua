@@ -65,3 +65,5 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     end
   end,
 })
+
+require("util.claude_redraw").setup()

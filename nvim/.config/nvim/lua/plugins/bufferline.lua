@@ -1,6 +1,10 @@
 return {
   "akinsho/bufferline.nvim",
   opts = function(_, opts)
+    -- Always show the bufferline: toggling it at 1 <-> 2 buffers resizes terminals, which garbles
+    -- Claude Code's main-screen rendering (see util/claude_redraw.lua)
+    opts.options.always_show_bufferline = true
+
     local ft_icon = opts.options.get_element_icon -- LazyVim's original
 
     -- label terminals with vim.b.term_name (set by :TermName) instead of "<pid>:/usr/bin/zsh"
