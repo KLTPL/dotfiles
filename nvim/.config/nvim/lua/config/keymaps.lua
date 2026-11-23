@@ -72,12 +72,11 @@ vim.keymap.set("n", "<leader>Ts", open_terminal("split | terminal"), { desc = "T
 vim.keymap.set("n", "<leader>Tv", open_terminal("vsplit | terminal"), { desc = "Terminal in vertical split" })
 vim.keymap.set("n", "<leader>Tt", "<cmd>tabnew | terminal<cr>", { desc = "Terminal in new tab" })
 
--- Claude Code in a new terminal, labelled "claude" (icon in lua/config/term_icons.lua)
+-- Claude Code in a new terminal, labelled "claude 1", "claude 2", ... (icon in lua/config/term_icons.lua)
 vim.keymap.set("n", "<leader>Tc", function()
   focus_regular_window()
   vim.cmd("terminal claude")
-  vim.b.term_name = "claude"
-  require("bufferline.ui").refresh()
+  require("util.term_name").set(vim.api.nvim_get_current_buf(), "claude", true)
 end, { desc = "Claude Code in new terminal" })
 
 -- Tab navigation

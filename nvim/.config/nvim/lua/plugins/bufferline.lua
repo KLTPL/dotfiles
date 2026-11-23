@@ -21,7 +21,7 @@ return {
         -- icon_opts carries no buffer number, only the path, so find the buffer by name
         for _, buf in ipairs(vim.api.nvim_list_bufs()) do
           if vim.api.nvim_buf_get_name(buf) == icon_opts.path then
-            local custom = require("config.term_icons")[vim.b[buf].term_name]
+            local custom = require("util.term_name").icon(vim.b[buf].term_name)
             if custom then
               return custom.icon, custom.hl
             end

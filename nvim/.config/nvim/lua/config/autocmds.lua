@@ -7,12 +7,6 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
--- :TermName <label> sets the bufferline label of the current terminal (see plugins/bufferline.lua)
-vim.api.nvim_create_user_command("TermName", function(cmd)
-  vim.b.term_name = cmd.args
-  require("bufferline.ui").refresh()
-end, { nargs = 1, desc = "Set the bufferline label of the current terminal" })
-
 -- Home is on ecryptfs (143-byte filename limit). Native undo files are named after the
 -- file's full path, so saving deeply nested files fails with E828. For those files,
 -- keep undo history in a file named by a hash of the path instead.
@@ -68,3 +62,4 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 require("util.claude_redraw").setup()
 require("util.claude_prompts").setup()
+require("util.term_name").setup()
