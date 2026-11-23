@@ -6,7 +6,7 @@ local M = {}
 local DEBOUNCE_MS = 150
 
 -- Name of the foreground process on the terminal's pty, so Claude is found also when started from a shell
-local function foreground_comm(buf)
+function M.foreground_comm(buf)
   local pid = vim.b[buf].terminal_job_pid
   local stat = pid and io.open("/proc/" .. pid .. "/stat")
   if not stat then
@@ -34,7 +34,7 @@ local function redraw_later(buf)
   pending[buf] = true
   vim.defer_fn(function()
     pending[buf] = nil
-    if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].buftype == "terminal" and foreground_comm(buf) == "claude" then
+    if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].buftype == "terminal" and M.foreground_comm(buf) == "claude" then
       vim.api.nvim_chan_send(vim.bo[buf].channel, "\12")
     end
   end, DEBOUNCE_MS)

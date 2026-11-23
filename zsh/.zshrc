@@ -211,6 +211,16 @@ export NVM_DIR="$HOME/.nvm"
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/.p10k.zsh.
 [[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
 
+# Mark each prompt with OSC 133 so Neovim's [[ / ]] can jump between prompts in :terminal.
+# The empty line between prompts (POWERLEVEL9K_PROMPT_ADD_NEWLINE is off) goes before the mark.
+autoload -Uz add-zsh-hook
+_osc133_prompt_mark() {
+  (( ${+_osc133_not_first} )) && print
+  typeset -g _osc133_not_first=1
+  print -Pn '\e]133;A\e\\'
+}
+add-zsh-hook precmd _osc133_prompt_mark
+
 # pnpm
 export PNPM_HOME="/home/kltpl/.local/share/pnpm"
 case ":$PATH:" in
