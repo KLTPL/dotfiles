@@ -19,3 +19,9 @@ vim.opt.scrollback = 100000
 
 -- Keep the markdown-preview browser tab open when switching to another buffer
 vim.g.mkdp_auto_close = 0
+
+-- Home is on ecryptfs (143-byte filename limit), too short for full-path swap names of
+-- deep project files (E303); the runtime dir is a private tmpfs with the usual 255 limit
+if vim.env.XDG_RUNTIME_DIR then
+  vim.opt.directory = vim.env.XDG_RUNTIME_DIR .. "/nvim/swap//"
+end
