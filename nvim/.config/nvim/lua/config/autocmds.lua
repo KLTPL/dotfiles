@@ -63,3 +63,4 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 require("util.claude_redraw").setup()
 require("util.claude_prompts").setup()
 require("util.term_name").setup()
+require("util.term_yank").setup()
