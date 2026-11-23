@@ -15,6 +15,9 @@ return {
         end,
       },
       filesystem = {
+        group_empty_dirs = true,
+        -- scan ahead so chains are collapsed before they are expanded
+        scan_mode = "deep",
         filtered_items = {
           visible = true,
           hide_dotfiles = false,
