@@ -12,3 +12,56 @@ vim.api.nvim_create_user_command("TermName", function(cmd)
   vim.b.term_name = cmd.args
   require("bufferline.ui").refresh()
 end, { nargs = 1, desc = "Set the bufferline label of the current terminal" })
+
+-- Home is on ecryptfs (143-byte filename limit). Native undo files are named after the
+-- file's full path, so saving deeply nested files fails with E828. For those files,
+-- keep undo history in a file named by a hash of the path instead.
+local NAME_MAX = 143
+local hashed_undodir = vim.fn.stdpath("state") .. "/undo-hashed"
+
+local function hashed_undofile(buf)
+  local path = vim.api.nvim_buf_get_name(buf)
+  if vim.bo[buf].buftype ~= "" or #path <= NAME_MAX then
+    return nil
+  end
+  return hashed_undodir .. "/" .. vim.fn.sha256(path)
+end
+
+local long_path_undo = vim.api.nvim_create_augroup("long_path_undo", { clear = true })
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = long_path_undo,
+  desc = "Read hashed undo history for paths too long for 'undodir'",
+  callback = function(ev)
+    local file = hashed_undofile(ev.buf)
+    if file and vim.uv.fs_stat(file) then
+      vim.api.nvim_buf_call(ev.buf, function()
+        vim.cmd("silent rundo " .. vim.fn.fnameescape(file))
+      end)
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = long_path_undo,
+  desc = "Skip native undo file (E828) for paths too long for 'undodir'",
+  callback = function(ev)
+    if hashed_undofile(ev.buf) then
+      vim.bo[ev.buf].undofile = false
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = long_path_undo,
+  desc = "Write hashed undo history for paths too long for 'undodir'",
+  callback = function(ev)
+    local file = hashed_undofile(ev.buf)
+    if file then
+      vim.fn.mkdir(hashed_undodir, "p")
+      vim.api.nvim_buf_call(ev.buf, function()
+        vim.cmd("wundo " .. vim.fn.fnameescape(file))
+      end)
+    end
+  end,
+})
