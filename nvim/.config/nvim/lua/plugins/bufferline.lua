@@ -2,7 +2,7 @@ return {
   "akinsho/bufferline.nvim",
   opts = function(_, opts)
     -- Always show the bufferline: toggling it at 1 <-> 2 buffers resizes terminals, which garbles
-    -- Claude Code's main-screen rendering (see util/claude_redraw.lua)
+    -- Claude Code's main-screen rendering (see util/term_size.lua)
     opts.options.always_show_bufferline = true
 
     local ft_icon = opts.options.get_element_icon -- LazyVim's original

@@ -13,7 +13,7 @@ local function map(buf, lhs, flags)
   end)
   local backward = flags:find("b") ~= nil
   vim.keymap.set("n", lhs, function()
-    if require("util.claude_redraw").foreground_comm(buf) == "claude" then
+    if require("util.foreground").foreground_comm(buf) == "claude" then
       for _ = 1, vim.v.count1 do
         if vim.fn.search(PROMPT, flags) == 0 then
           -- Past the last sent prompt: go to the input box at the bottom

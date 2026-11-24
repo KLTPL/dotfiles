@@ -42,7 +42,7 @@ local function auto_name(buf)
   if not vim.api.nvim_buf_is_valid(buf) or (vim.b[buf].term_name and not vim.b[buf].term_name_auto) then
     return
   end
-  local base = AUTO[require("util.claude_redraw").foreground_comm(buf)]
+  local base = AUTO[require("util.foreground").foreground_comm(buf)]
   local current = vim.b[buf].term_name
   if base and not (current and current:gsub(" %d+$", "") == base) then
     M.set(buf, base, true)

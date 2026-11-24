@@ -77,7 +77,7 @@ for _, win in ipairs(vim.api.nvim_list_wins()) do
   end
 end
 
-require("util.claude_redraw").setup()
 require("util.claude_prompts").setup()
 require("util.term_name").setup()
 require("util.term_yank").setup()
+require("util.term_size").setup()

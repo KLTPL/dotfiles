@@ -88,8 +88,9 @@ function M.yank()
   else
     local top = math.min(from[2], to[2])
     local full = vim.api.nvim_buf_get_lines(0, top - 1, top - 1 + #lines, true)
-    local info = vim.fn.getwininfo(vim.api.nvim_get_current_win())[1]
-    text = M.clean_lines(lines, full, mode == "v", info.width - info.textoff)
+    -- Claude wraps at the terminal's width, which can be wider than this window (see util/term_size.lua)
+    local width = require("util.term_size").width(vim.api.nvim_get_current_buf())
+    text = M.clean_lines(lines, full, mode == "v", width)
   end
 
   vim.fn.setreg(vim.v.register, text, "v")
