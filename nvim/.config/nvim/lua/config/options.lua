@@ -17,6 +17,13 @@ vim.opt.titlestring = "nvim: %{fnamemodify(getcwd(), ':t')}"
 vim.env.CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN = "1"
 vim.opt.scrollback = 100000
 
+-- Neovim 0.13-dev bug: the first read of a hidden buffer's option in a session (plugins like bufferline do
+-- this all the time) resizes the current terminal to the full editor width, and Claude redraws badly after
+-- a resize. Doing that first read now, before any terminal exists, makes it harmless.
+local scratch = vim.api.nvim_create_buf(false, true)
+local _ = vim.bo[scratch].buftype
+vim.api.nvim_buf_delete(scratch, { force = true })
+
 -- Keep the markdown-preview browser tab open when switching to another buffer
 vim.g.mkdp_auto_close = 0
 
