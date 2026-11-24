@@ -1,5 +1,9 @@
 {
   "model": "sonnet",
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "enabledPlugins": {
     "humanizer@humanizer": true,
     "frontend-design@claude-plugins-official": true,
