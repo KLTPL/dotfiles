@@ -60,6 +60,23 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end,
 })
 
+-- Neovim turns 'wrap' off in terminals, so a line wider than the window (output printed before the window
+-- narrowed, e.g. when the explorer opens) makes the view scroll sideways to the cursor and cut off every line.
+-- With 'wrap' on, wide lines wrap and the view never shifts.
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup("term_wrap", { clear = true }),
+  desc = "Wrap long lines in terminal windows",
+  callback = function()
+    vim.wo[0][0].wrap = true
+  end,
+})
+-- Terminals opened at startup (e.g. by cnvim) exist before this runs on VeryLazy
+for _, win in ipairs(vim.api.nvim_list_wins()) do
+  if vim.bo[vim.api.nvim_win_get_buf(win)].buftype == "terminal" then
+    vim.wo[win][0].wrap = true
+  end
+end
+
 require("util.claude_redraw").setup()
 require("util.claude_prompts").setup()
 require("util.term_name").setup()
